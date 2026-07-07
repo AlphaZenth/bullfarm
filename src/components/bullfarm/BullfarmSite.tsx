@@ -20,7 +20,7 @@ import {
 
 const LOGO = "/assets/logo.jpeg";
 const BANNER = "/assets/banner.jpeg";
-const PUMP_URL = "https://pump.fun";
+const PUMP_URL = "https://pump.fun/coin/6MDR99FhSmhosYVf5sa3Ngthk1buxKuAASigUyAKpump";
 const X_URL = "https://x.com";
 
 // ---------- Ambient FX ----------
@@ -621,7 +621,7 @@ function Why() {
 // ---------- Token ----------
 function Token() {
   const [copied, setCopied] = useState(false);
-  const contract = "Available After Launch";
+  const contract = "6MDR99FhSmhosYVf5sa3Ngthk1buxKuAASigUyAKpump";
   const copy = () => {
     navigator.clipboard?.writeText(contract);
     setCopied(true);
