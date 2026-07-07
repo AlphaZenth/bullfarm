@@ -59,29 +59,43 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-wood: var(--wood);
+  --color-wood-dark: var(--wood-dark);
+  --color-wheat: var(--wheat);
+  --color-forest: var(--forest);
+  --color-grass: var(--grass);
+  --color-pumpkin: var(--pumpkin);
+  --color-moon: var(--moon);
+  --color-barn: var(--barn);
+  --color-cream: var(--cream);
+  --color-sky: var(--sky);
+  --color-gold: var(--gold);
+  --color-night: var(--night);
+  --font-display: "Baloo 2", "Fredoka", system-ui, sans-serif;
+  --font-body: "Nunito", system-ui, sans-serif;
 }
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --background: oklch(0.97 0.03 85);
+  --foreground: oklch(0.28 0.06 45);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
+  --card-foreground: oklch(0.28 0.06 45);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.28 0.06 45);
+  --primary: oklch(0.55 0.16 45);
+  --primary-foreground: oklch(0.98 0.02 90);
+  --secondary: oklch(0.55 0.16 145);
+  --secondary-foreground: oklch(0.98 0.02 90);
+  --muted: oklch(0.93 0.03 85);
+  --muted-foreground: oklch(0.45 0.05 55);
+  --accent: oklch(0.82 0.16 85);
+  --accent-foreground: oklch(0.28 0.08 45);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --border: oklch(0.82 0.08 65);
+  --input: oklch(0.9 0.05 70);
+  --ring: oklch(0.55 0.16 45);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -95,6 +109,19 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
+  /* Farm palette */
+  --wood: oklch(0.42 0.08 45);
+  --wood-dark: oklch(0.28 0.06 40);
+  --wheat: oklch(0.82 0.16 85);
+  --forest: oklch(0.38 0.09 145);
+  --grass: oklch(0.62 0.17 140);
+  --pumpkin: oklch(0.68 0.19 45);
+  --moon: oklch(0.92 0.11 95);
+  --barn: oklch(0.48 0.18 30);
+  --cream: oklch(0.96 0.04 90);
+  --sky: oklch(0.78 0.09 230);
+  --gold: oklch(0.78 0.15 85);
+  --night: oklch(0.22 0.07 260);
 }
 
 .dark {
@@ -140,5 +167,64 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-body);
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+}
+
+@utility text-shadow-farm {
+  text-shadow: 0 2px 0 rgba(60, 30, 10, 0.35), 0 4px 12px rgba(0,0,0,0.25);
+}
+
+@utility wood-panel {
+  background:
+    repeating-linear-gradient(90deg, rgba(0,0,0,0.05) 0 2px, transparent 2px 26px),
+    linear-gradient(180deg, oklch(0.5 0.09 45), oklch(0.36 0.07 40));
+  border: 3px solid oklch(0.24 0.06 35);
+  box-shadow:
+    inset 0 2px 0 rgba(255,255,255,0.15),
+    inset 0 -6px 12px rgba(0,0,0,0.3),
+    0 10px 30px rgba(0,0,0,0.25);
+  color: var(--color-cream);
+}
+
+@utility btn-farm {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 9999px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  background: linear-gradient(180deg, oklch(0.75 0.17 55), oklch(0.58 0.19 40));
+  color: #fff8ea;
+  border: 3px solid oklch(0.32 0.09 35);
+  box-shadow: 0 6px 0 oklch(0.32 0.09 35), 0 12px 24px rgba(0,0,0,0.25), inset 0 2px 0 rgba(255,255,255,0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+@utility btn-farm-green {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 9999px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  background: linear-gradient(180deg, oklch(0.72 0.17 145), oklch(0.5 0.16 145));
+  color: #fff8ea;
+  border: 3px solid oklch(0.28 0.08 145);
+  box-shadow: 0 6px 0 oklch(0.28 0.08 145), 0 12px 24px rgba(0,0,0,0.25), inset 0 2px 0 rgba(255,255,255,0.3);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+@utility sky-bg {
+  background:
+    radial-gradient(ellipse at 20% 20%, oklch(0.35 0.09 260) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 10%, oklch(0.4 0.1 250) 0%, transparent 50%),
+    linear-gradient(180deg, oklch(0.22 0.07 260) 0%, oklch(0.32 0.08 250) 60%, oklch(0.55 0.1 200) 100%);
 }

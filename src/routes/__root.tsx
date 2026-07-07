@@ -77,21 +77,49 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Bullfarm | Cozy Farming Memecoin on Solana" },
+      {
+        name: "description",
+        content:
+          "Bullfarm is a Harvest Moon-inspired farming memecoin built on Solana and launched through Pump.fun. Grow together with the community and experience the cutest bull-powered crypto adventure.",
+      },
+      {
+        name: "keywords",
+        content:
+          "Bullfarm, BULLFARM, Solana, Pump.fun, Harvest Moon, Crypto Farm, Bull Meme, Web3 Game, Farming Token",
+      },
+      { property: "og:title", content: "Bullfarm — Build. Harvest. Trade. Moon." },
+      {
+        property: "og:description",
+        content: "Cozy farming memecoin on Solana. Launched through Pump.fun.",
+      },
+      { property: "og:image", content: "/assets/banner.jpeg" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Bullfarm" },
+      { name: "twitter:description", content: "Build. Harvest. Trade. Moon." },
+      { name: "twitter:image", content: "/assets/banner.jpeg" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.jpeg", type: "image/jpeg" },
+      { rel: "apple-touch-icon", href: "/assets/logo.jpeg" },
+      {
+        rel: "preconnect",
+        href: "https://fonts.googleapis.com",
+      },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap",
+      },
     ],
   }),
   shellComponent: RootShell,
