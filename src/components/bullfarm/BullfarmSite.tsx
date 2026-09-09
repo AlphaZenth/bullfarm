@@ -9,6 +9,8 @@ import {
   Rocket,
   Users,
   Coins,
+  Copy,
+  Check,
   Menu,
   X as XIcon,
   ExternalLink,
@@ -18,8 +20,9 @@ import {
 
 const LOGO = "/assets/logo.jpeg";
 const BANNER = "/assets/banner.jpeg";
-const RADARDEX_URL = "https://radardex.pro";
-const X_URL = "https://x.com/BullfarmArc";
+const RADARDEX_URL =
+  "https://radardex.pro/#0x0cCf0992e6AB229dC1a05bBc3Cb67f20F5ECfa32";
+const X_URL = "https://x.com/BullfarmMeme";
 
 // ---------- Ambient FX ----------
 function Firefly({ i }: { i: number }) {
@@ -640,7 +643,13 @@ function Why() {
 
 // ---------- Token ----------
 function Token() {
-  const contract = "Coming Soon";
+  const [copied, setCopied] = useState(false);
+  const contract = "0x0ccf0992e6ab229dc1a05bbc3cb67f20f5ecfa32";
+  const copy = () => {
+    navigator.clipboard?.writeText(contract);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1600);
+  };
   const rows = [
     ["Token Name", "BULLFARM"],
     ["Ticker", "$BULLFARM"],
@@ -702,13 +711,16 @@ function Token() {
               Contract Address
             </div>
             <div className="flex items-center justify-between gap-3">
-              <code className="truncate text-sm font-bold text-[color:var(--color-moon)]">
+              <code className="truncate text-sm text-[color:var(--color-cream)]/90">
                 {contract}
               </code>
-              <span className="inline-flex items-center gap-1 rounded-full bg-[color:var(--color-wheat)]/50 px-3 py-1.5 text-sm font-bold text-[color:var(--color-cream)]">
-                <Sparkles className="h-4 w-4" />
-                Soon
-              </span>
+              <button
+                onClick={copy}
+                className="inline-flex items-center gap-1 rounded-full bg-[color:var(--color-wheat)] px-3 py-1.5 text-sm font-bold text-[color:var(--color-wood-dark)] transition hover:scale-105"
+              >
+                {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+                {copied ? "Copied" : "Copy"}
+              </button>
             </div>
           </div>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
