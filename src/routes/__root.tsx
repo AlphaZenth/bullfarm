@@ -77,21 +77,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Bullfarm | Cozy Farming Memecoin on Solana" },
+      { title: "Bullfarm | Cozy Farming Memecoin on ARC" },
       {
         name: "description",
         content:
-          "Bullfarm is a Harvest Moon-inspired farming memecoin built on Solana and launched through Pump.fun. Grow together with the community and experience the cutest bull-powered crypto adventure.",
+          "Bullfarm is a Harvest Moon-inspired farming memecoin built on ARC and traded on RadarDex. Grow together with the community and experience the cutest bull-powered crypto adventure.",
       },
       {
         name: "keywords",
         content:
-          "Bullfarm, BULLFARM, Solana, Pump.fun, Harvest Moon, Crypto Farm, Bull Meme, Web3 Game, Farming Token",
+          "Bullfarm, BULLFARM, ARC, RadarDex, radardex.pro, Harvest Moon, Crypto Farm, Bull Meme, Web3 Game, Farming Token",
       },
       { property: "og:title", content: "Bullfarm — Build. Harvest. Trade. Moon." },
       {
         property: "og:description",
-        content: "Cozy farming memecoin on Solana. Launched through Pump.fun.",
+        content: "Cozy farming memecoin on ARC. Trade on RadarDex.",
       },
       { property: "og:image", content: "/assets/banner.jpeg" },
       { property: "og:type", content: "website" },

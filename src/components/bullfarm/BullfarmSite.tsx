@@ -9,8 +9,6 @@ import {
   Rocket,
   Users,
   Coins,
-  Copy,
-  Check,
   Menu,
   X as XIcon,
   ExternalLink,
@@ -20,8 +18,8 @@ import {
 
 const LOGO = "/assets/logo.jpeg";
 const BANNER = "/assets/banner.jpeg";
-const PUMP_URL = "https://pump.fun/coin/7os5NHv21mg5gP5L8q196fftFM34qP13WbBcTPidpump";
-const X_URL = "https://x.com";
+const RADARDEX_URL = "https://radardex.pro";
+const X_URL = "https://x.com/BullfarmArc";
 
 // ---------- Ambient FX ----------
 function Firefly({ i }: { i: number }) {
@@ -195,7 +193,7 @@ function Navbar() {
               {label}
             </a>
           ))}
-          <a href={PUMP_URL} target="_blank" rel="noreferrer" className="btn-farm text-sm">
+          <a href={RADARDEX_URL} target="_blank" rel="noreferrer" className="btn-farm text-sm">
             <Coins className="h-4 w-4" /> Buy
           </a>
         </nav>
@@ -227,12 +225,12 @@ function Navbar() {
                 </a>
               ))}
               <a
-                href={PUMP_URL}
+                href={RADARDEX_URL}
                 target="_blank"
                 rel="noreferrer"
                 className="btn-farm mt-2 justify-center"
               >
-                <Coins className="h-4 w-4" /> Buy on Pump.fun
+                <Coins className="h-4 w-4" /> Buy on RadarDex
               </a>
             </div>
           </motion.div>
@@ -254,8 +252,7 @@ function Hero() {
       <motion.div
         className="absolute right-[10%] top-[12%] h-56 w-56 rounded-full bg-[color:var(--color-moon)]"
         style={{
-          boxShadow:
-            "0 0 80px 40px rgba(255,230,150,0.35), 0 0 200px 80px rgba(255,220,140,0.2)",
+          boxShadow: "0 0 80px 40px rgba(255,230,150,0.35), 0 0 200px 80px rgba(255,220,140,0.2)",
         }}
         animate={{ scale: [1, 1.05, 1], opacity: [0.85, 1, 0.85] }}
         transition={{ duration: 6, repeat: Infinity }}
@@ -316,10 +313,10 @@ function Hero() {
           transition={{ delay: 0.7 }}
           className="mt-6 max-w-2xl text-base leading-relaxed text-[color:var(--color-cream)]/90 sm:text-lg"
         >
-          Bullfarm is a cozy farming adventure inspired by Harvest Moon, bringing farming
-          simulation into Web3. Built on Solana and launched through Pump.fun, Bullfarm
-          combines adorable bull characters, community-driven growth, and the spirit of
-          blockchain gaming into one unforgettable experience.
+          Bullfarm is a cozy farming adventure inspired by Harvest Moon, bringing farming simulation
+          into Web3. Built on ARC and traded on RadarDex, Bullfarm combines adorable bull
+          characters, community-driven growth, and the spirit of blockchain gaming into one
+          unforgettable experience.
         </motion.p>
         <motion.div
           initial={{ y: 20, opacity: 0 }}
@@ -330,12 +327,22 @@ function Hero() {
           <motion.a
             whileHover={{ y: -3 }}
             whileTap={{ y: 2, boxShadow: "0 2px 0 var(--color-wood-dark)" }}
-            href={PUMP_URL}
+            href={RADARDEX_URL}
             target="_blank"
             rel="noreferrer"
             className="btn-farm text-base"
           >
-            <Rocket className="h-5 w-5" /> Buy on Pump.fun
+            <Rocket className="h-5 w-5" /> Buy on RadarDex
+          </motion.a>
+          <motion.a
+            whileHover={{ y: -3 }}
+            whileTap={{ y: 2, boxShadow: "0 2px 0 var(--color-wood-dark)" }}
+            href={RADARDEX_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="btn-farm text-base"
+          >
+            <Sparkles className="h-5 w-5" /> View Chart
           </motion.a>
           <motion.a
             whileHover={{ y: -3 }}
@@ -432,19 +439,18 @@ function About() {
           />
           <div className="space-y-4 text-lg leading-relaxed text-[color:var(--color-wood-dark)]">
             <p>
-              Bullfarm is a farming-inspired Web3 project that captures the relaxing
-              atmosphere of classic farming games while embracing the excitement of crypto
-              culture.
+              Bullfarm is a farming-inspired Web3 project that captures the relaxing atmosphere of
+              classic farming games while embracing the excitement of crypto culture.
             </p>
             <p>
               Players imagine themselves managing a peaceful farm alongside their loyal bull
-              companion, growing crops, exploring nature, expanding their land, and building
-              a thriving community.
+              companion, growing crops, exploring nature, expanding their land, and building a
+              thriving community.
             </p>
             <p>
-              Built on Solana and launched through Pump.fun, Bullfarm represents patience,
-              steady growth, and long-term community value. It is not just another meme
-              token—it is a charming digital world where farming and blockchain meet.
+              Built on ARC and traded on RadarDex, Bullfarm represents patience, steady growth, and
+              long-term community value. It is not just another meme token—it is a charming digital
+              world where farming and blockchain meet.
             </p>
           </div>
         </motion.div>
@@ -530,9 +536,7 @@ function Gameplay() {
                   {c.icon}
                 </div>
               </div>
-              <h3 className="font-display text-2xl font-extrabold text-shadow-farm">
-                {c.title}
-              </h3>
+              <h3 className="font-display text-2xl font-extrabold text-shadow-farm">{c.title}</h3>
               <p className="mt-2 text-[color:var(--color-cream)]/90">{c.desc}</p>
               <div className="mt-5 flex gap-1">
                 {Array.from({ length: 12 }).map((_, k) => (
@@ -552,13 +556,7 @@ function Gameplay() {
   );
 }
 
-function SectionTitleDark({
-  children,
-  sub,
-}: {
-  children: React.ReactNode;
-  sub?: string;
-}) {
+function SectionTitleDark({ children, sub }: { children: React.ReactNode; sub?: string }) {
   return (
     <motion.div
       initial={{ y: 30, opacity: 0 }}
@@ -570,9 +568,7 @@ function SectionTitleDark({
         {children}
       </h2>
       {sub && (
-        <p className="mx-auto mt-3 max-w-2xl text-lg text-[color:var(--color-cream)]/80">
-          {sub}
-        </p>
+        <p className="mx-auto mt-3 max-w-2xl text-lg text-[color:var(--color-cream)]/80">{sub}</p>
       )}
     </motion.div>
   );
@@ -581,12 +577,36 @@ function SectionTitleDark({
 // ---------- Why Bullfarm ----------
 function Why() {
   const items = [
-    { icon: <Heart className="h-6 w-6" />, title: "Cute Bull Mascot", desc: "A friendly face leading the herd." },
-    { icon: <Moon className="h-6 w-6" />, title: "Harvest Moon Inspiration", desc: "Cozy vibes, timeless charm." },
-    { icon: <Sparkles className="h-6 w-6" />, title: "Built on Solana", desc: "Fast, cheap, community-scale." },
-    { icon: <Rocket className="h-6 w-6" />, title: "Pump.fun Launch", desc: "Fair, transparent, on-chain launch." },
-    { icon: <Users className="h-6 w-6" />, title: "Community First", desc: "Neighbors, not numbers." },
-    { icon: <Wheat className="h-6 w-6" />, title: "Long-term Vision", desc: "Growing season by season." },
+    {
+      icon: <Heart className="h-6 w-6" />,
+      title: "Cute Bull Mascot",
+      desc: "A friendly face leading the herd.",
+    },
+    {
+      icon: <Moon className="h-6 w-6" />,
+      title: "Harvest Moon Inspiration",
+      desc: "Cozy vibes, timeless charm.",
+    },
+    {
+      icon: <Sparkles className="h-6 w-6" />,
+      title: "Built on ARC",
+      desc: "Secure, scalable, community-scale.",
+    },
+    {
+      icon: <Rocket className="h-6 w-6" />,
+      title: "RadarDex Trading",
+      desc: "Fair, transparent, on-chain trading.",
+    },
+    {
+      icon: <Users className="h-6 w-6" />,
+      title: "Community First",
+      desc: "Neighbors, not numbers.",
+    },
+    {
+      icon: <Wheat className="h-6 w-6" />,
+      title: "Long-term Vision",
+      desc: "Growing season by season.",
+    },
   ];
   return (
     <section className="relative overflow-hidden bg-[color:var(--color-cream)] py-24">
@@ -620,26 +640,17 @@ function Why() {
 
 // ---------- Token ----------
 function Token() {
-  const [copied, setCopied] = useState(false);
-  const contract = "7os5NHv21mg5gP5L8q196fftFM34qP13WbBcTPidpump";
-  const copy = () => {
-    navigator.clipboard?.writeText(contract);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 1600);
-  };
+  const contract = "Coming Soon";
   const rows = [
     ["Token Name", "BULLFARM"],
     ["Ticker", "$BULLFARM"],
-    ["Network", "Solana"],
-    ["Launch", "Pump.fun"],
+    ["Network", "ARC"],
+    ["DEX", "RadarDex"],
     ["Tax", "0%"],
     ["Supply", "TBA"],
   ];
   return (
-    <section
-      id="token"
-      className="relative overflow-hidden bg-[color:var(--color-forest)] py-24"
-    >
+    <section id="token" className="relative overflow-hidden bg-[color:var(--color-forest)] py-24">
       <div
         className="absolute inset-0 opacity-25"
         style={{
@@ -651,7 +662,7 @@ function Token() {
       />
       <div className="absolute inset-0 bg-[color:var(--color-forest)]/70" />
       <div className="relative mx-auto max-w-4xl px-6">
-        <SectionTitleDark sub="A humble seed. Fair launch on Pump.fun.">
+        <SectionTitleDark sub="A humble seed. Trade on RadarDex.">
           🪙 The $BULLFARM Token
         </SectionTitleDark>
         <motion.div
@@ -667,12 +678,8 @@ function Token() {
               className="h-16 w-16 shrink-0 rounded-full border-2 border-[color:var(--color-gold)]"
             />
             <div className="min-w-0">
-              <div className="font-display text-2xl font-extrabold text-shadow-farm">
-                $BULLFARM
-              </div>
-              <div className="text-sm text-[color:var(--color-cream)]/80">
-                Cozy farming on Solana
-              </div>
+              <div className="font-display text-2xl font-extrabold text-shadow-farm">$BULLFARM</div>
+              <div className="text-sm text-[color:var(--color-cream)]/80">Cozy farming on ARC</div>
             </div>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
@@ -695,21 +702,21 @@ function Token() {
               Contract Address
             </div>
             <div className="flex items-center justify-between gap-3">
-              <code className="truncate text-sm text-[color:var(--color-cream)]/90">
+              <code className="truncate text-sm font-bold text-[color:var(--color-moon)]">
                 {contract}
               </code>
-              <button
-                onClick={copy}
-                className="inline-flex items-center gap-1 rounded-full bg-[color:var(--color-wheat)] px-3 py-1.5 text-sm font-bold text-[color:var(--color-wood-dark)] transition hover:scale-105"
-              >
-                {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-                {copied ? "Copied" : "Copy"}
-              </button>
+              <span className="inline-flex items-center gap-1 rounded-full bg-[color:var(--color-wheat)]/50 px-3 py-1.5 text-sm font-bold text-[color:var(--color-cream)]">
+                <Sparkles className="h-4 w-4" />
+                Soon
+              </span>
             </div>
           </div>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <a href={PUMP_URL} target="_blank" rel="noreferrer" className="btn-farm">
-              <Rocket className="h-4 w-4" /> Buy on Pump.fun <ExternalLink className="h-3 w-3" />
+            <a href={RADARDEX_URL} target="_blank" rel="noreferrer" className="btn-farm">
+              <Rocket className="h-4 w-4" /> Buy on RadarDex <ExternalLink className="h-3 w-3" />
+            </a>
+            <a href={RADARDEX_URL} target="_blank" rel="noreferrer" className="btn-farm">
+              <Sparkles className="h-4 w-4" /> View Chart <ExternalLink className="h-3 w-3" />
             </a>
           </div>
         </motion.div>
@@ -832,15 +839,17 @@ function Community() {
           Join the Bullfarm Family
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-lg text-[color:var(--color-cream)]/90">
-          Where every harvest brings new opportunities. Come grow with us under the harvest
-          moon.
+          Where every harvest brings new opportunities. Come grow with us under the harvest moon.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <a href={X_URL} target="_blank" rel="noreferrer" className="btn-farm-green">
             <XLogo /> Follow on X
           </a>
-          <a href={PUMP_URL} target="_blank" rel="noreferrer" className="btn-farm">
-            <Rocket className="h-4 w-4" /> Buy on Pump.fun
+          <a href={RADARDEX_URL} target="_blank" rel="noreferrer" className="btn-farm">
+            <Rocket className="h-4 w-4" /> Buy on RadarDex
+          </a>
+          <a href={RADARDEX_URL} target="_blank" rel="noreferrer" className="btn-farm">
+            <Sparkles className="h-4 w-4" /> View Chart
           </a>
         </div>
       </div>
@@ -862,7 +871,7 @@ function Footer() {
           <div className="min-w-0">
             <div className="truncate font-display text-xl font-extrabold">Bullfarm</div>
             <div className="text-xs text-[color:var(--color-cream)]/70">
-              Built on Solana · Launched on Pump.fun
+              Built on ARC · Trade on RadarDex
             </div>
           </div>
         </div>
@@ -877,10 +886,10 @@ function Footer() {
             <XLogo />
           </a>
           <a
-            href={PUMP_URL}
+            href={RADARDEX_URL}
             target="_blank"
             rel="noreferrer"
-            aria-label="Pump.fun"
+            aria-label="RadarDex"
             className="grid h-10 w-10 place-items-center rounded-full border-2 border-[color:var(--color-gold)]/60 transition hover:bg-white/10"
           >
             <Rocket className="h-4 w-4" />
